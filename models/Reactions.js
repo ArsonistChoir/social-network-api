@@ -1,9 +1,10 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types} = require('mongoose');
 
 const reactionsSchema = new Schema(
     {
         reactionId : {
-            //Needs Mongoose Id and set value to new Id
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId()
         },
         reactionBody : {
             type: String,
@@ -16,17 +17,13 @@ const reactionsSchema = new Schema(
             required: true
         },
         createdAt : {
-            //Needs Date, default value, and getter
+            type: Date,
+            default: Date.now,
+            get: (timeDate)=>{
+                return timeDate.getMonth()
+            }
         }
     },
-    {
-        // toJSON: {
-        //   virtuals: true,
-        // },
-        // id: false,
-      }
   );
-  
-  const Users = model('users', usersSchema);
 
-  module.exports = Users;
+  module.exports = reactionsSchema;
