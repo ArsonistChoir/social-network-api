@@ -24,11 +24,11 @@
   
   ## Links
   
-  Fill
+  https://github.com/ArsonistChoir/social-network-api
   
   ## Github
   
-  Fill
+  https://github.com/ArsonistChoir
   
   ## License
   
